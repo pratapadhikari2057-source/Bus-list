@@ -29,182 +29,70 @@
     padding:28px 20px 22px;
     border-bottom:4px solid var(--brass);
   }
-  .band-inner{
-    max-width:760px;
-    margin:0 auto;
-  }
+  .band-inner{ max-width:760px; margin:0 auto; }
   .eyebrow{
-    font-size:12px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:var(--brass);
-    font-weight:600;
-    margin-bottom:6px;
+    font-size:12px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--brass); font-weight:600; margin-bottom:6px;
   }
-  h1{
-    margin:0;
-    font-size:24px;
-    font-weight:700;
-    line-height:1.3;
-  }
-  .sub{
-    margin-top:6px;
-    font-size:14px;
-    color:#cfe0d8;
-  }
-  .wrap{
-    max-width:760px;
-    margin:0 auto;
-    padding:26px 20px 60px;
-  }
+  h1{ margin:0; font-size:24px; font-weight:700; line-height:1.3; }
+  .sub{ margin-top:6px; font-size:14px; color:#cfe0d8; }
+  .wrap{ max-width:760px; margin:0 auto; padding:26px 20px 60px; }
   .card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:24px;
-    margin-bottom:22px;
+    background:var(--white); border:1px solid var(--line);
+    border-radius:10px; padding:24px; margin-bottom:22px;
   }
   label{
-    display:block;
-    font-size:13px;
-    font-weight:600;
-    color:var(--deep);
-    margin-bottom:6px;
-    margin-top:16px;
+    display:block; font-size:13px; font-weight:600; color:var(--deep);
+    margin-bottom:6px; margin-top:16px;
   }
   label:first-of-type{margin-top:0;}
   input[type=text], input[type=tel], select{
-    width:100%;
-    padding:11px 12px;
-    border:1px solid var(--line);
-    border-radius:7px;
-    font-size:15px;
-    background:#fbfaf7;
-    color:var(--ink);
+    width:100%; padding:11px 12px; border:1px solid var(--line);
+    border-radius:7px; font-size:15px; background:#fbfaf7; color:var(--ink);
   }
   input:focus, select:focus{
-    outline:2px solid var(--moss);
-    outline-offset:1px;
-    background:var(--white);
+    outline:2px solid var(--moss); outline-offset:1px; background:var(--white);
   }
   optgroup{font-weight:700; color:var(--deep);}
-  .hint{
-    font-size:12px;
-    color:#6b6459;
-    margin-top:4px;
-  }
+  .hint{ font-size:12px; color:#6b6459; margin-top:4px; }
   .btn{
-    margin-top:22px;
-    width:100%;
-    padding:13px;
-    background:var(--moss);
-    color:var(--white);
-    border:none;
-    border-radius:7px;
-    font-size:15px;
-    font-weight:700;
-    cursor:pointer;
-    transition:background .15s;
+    margin-top:22px; width:100%; padding:13px; background:var(--moss);
+    color:var(--white); border:none; border-radius:7px; font-size:15px;
+    font-weight:700; cursor:pointer; transition:background .15s;
   }
   .btn:hover{background:#255a45;}
   .btn:disabled{background:#9fb5ac; cursor:not-allowed;}
   .msg{
-    margin-top:12px;
-    font-size:13.5px;
-    padding:10px 12px;
-    border-radius:6px;
-    display:none;
+    margin-top:12px; font-size:13.5px; padding:10px 12px; border-radius:6px; display:none;
   }
   .msg.ok{display:block; background:#e4f1e9; color:var(--deep); border:1px solid #bcd9c9;}
   .msg.err{display:block; background:#fbe9e5; color:var(--danger); border:1px solid #eec3ba;}
+  .msg.warn{display:block; background:#fdf3e2; color:#8a5b1e; border:1px solid #f0d8a8;}
 
-  .section-title{
-    font-size:15px;
-    font-weight:700;
-    color:var(--deep);
-    margin:0 0 4px;
-  }
-  .section-note{
-    font-size:12.5px;
-    color:#6b6459;
-    margin:0 0 14px;
-  }
-  table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:13px;
-  }
-  th, td{
-    text-align:left;
-    padding:8px 8px;
-    border-bottom:1px solid var(--line);
-    vertical-align:top;
-  }
-  th{
-    color:var(--deep);
-    font-size:11.5px;
-    text-transform:uppercase;
-    letter-spacing:.5px;
-  }
-  .empty{
-    font-size:13px;
-    color:#8a8377;
-    padding:14px 0;
-    text-align:center;
-  }
+  .section-title{ font-size:15px; font-weight:700; color:var(--deep); margin:0 0 4px; }
+  .section-note{ font-size:12.5px; color:#6b6459; margin:0 0 14px; }
+  table{ width:100%; border-collapse:collapse; font-size:13px; }
+  th, td{ text-align:left; padding:8px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th{ color:var(--deep); font-size:11.5px; text-transform:uppercase; letter-spacing:.5px; }
+  .empty{ font-size:13px; color:#8a8377; padding:14px 0; text-align:center; }
   .table-scroll{
-    max-height:340px;
-    overflow-y:auto;
-    border:1px solid var(--line);
-    border-radius:7px;
+    max-height:340px; overflow-y:auto; border:1px solid var(--line); border-radius:7px;
   }
   .table-scroll table{width:100%;}
-  .table-scroll thead th{
-    position:sticky; top:0; background:var(--white);
-  }
-  .footer-actions{
-    display:flex;
-    gap:10px;
-    margin-top:14px;
-  }
+  .table-scroll thead th{ position:sticky; top:0; background:var(--white); }
+  .footer-actions{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
   .btn-ghost{
-    flex:1;
-    padding:9px;
-    background:var(--white);
-    color:var(--deep);
-    border:1px solid var(--moss);
-    border-radius:7px;
-    font-size:13px;
-    font-weight:600;
-    cursor:pointer;
+    flex:1; min-width:120px; padding:9px; background:var(--white); color:var(--deep);
+    border:1px solid var(--moss); border-radius:7px; font-size:13px; font-weight:600; cursor:pointer;
   }
   .btn-ghost:hover{background:#eef4f0;}
-  .notice{
-    font-size:11.5px;
-    color:#8a8377;
-    margin-top:10px;
-    line-height:1.5;
-  }
-  .tabs{
-    display:flex;
-    gap:6px;
-    margin-bottom:14px;
-    border-bottom:1px solid var(--line);
-  }
+  .notice{ font-size:11.5px; color:#8a8377; margin-top:10px; line-height:1.5; }
+  .tabs{ display:flex; gap:6px; margin-bottom:14px; border-bottom:1px solid var(--line); }
   .tab-btn{
-    padding:9px 14px;
-    background:none;
-    border:none;
-    border-bottom:2px solid transparent;
-    font-size:13px;
-    font-weight:600;
-    color:#8a8377;
-    cursor:pointer;
+    padding:9px 14px; background:none; border:none; border-bottom:2px solid transparent;
+    font-size:13px; font-weight:600; color:#8a8377; cursor:pointer;
   }
-  .tab-btn.active{
-    color:var(--deep);
-    border-bottom:2px solid var(--moss);
-  }
+  .tab-btn.active{ color:var(--deep); border-bottom:2px solid var(--moss); }
   .tab-panel{display:none;}
   .tab-panel.active{display:block;}
 </style>
@@ -298,13 +186,18 @@
     <button class="btn" id="submitBtn">Submit Data</button>
     <div class="msg ok" id="okMsg">Thank you! Your data was collected successfully.</div>
     <div class="msg err" id="errMsg">Please fill in all fields.</div>
-    <div class="msg err" id="saveErrMsg">Something went wrong while saving. Please try again.</div>
-    <div class="notice" id="storageNotice"></div>
+    <div class="msg err" id="saveErrMsg">Could not save to the Google Sheet (fetch failed). This is usually caused by the Apps Script deployment's "Who has access" setting not being "Anyone". See the "Test Sheet connection" button below in Collected Data to check.</div>
+    <div class="msg warn" id="configWarn">Admin note: Google Sheet backend URL is not configured yet. See SHEET_WEBAPP_URL in the code.</div>
+    <div class="notice">Note: Data submitted here is saved directly to the college's Google Sheet.</div>
   </div>
 
   <div class="card">
     <p class="section-title">Collected Data — By Landmark Group</p>
     <p class="section-note">Students grouped by which side of Prithvichowk their landmark is on.</p>
+    <div class="msg err" id="loadErrMsg" style="display:none;">Could not load data from the Google Sheet (fetch failed). This usually means the Apps Script deployment's "Who has access" is not set to "Anyone". Click "Test Sheet connection" below — if it opens a Google sign-in / permission page instead of JSON text, that confirms it. Fix: in Apps Script, go to Deploy → Manage deployments → Edit (pencil) → set "Who has access" to "Anyone" → Deploy again.</div>
+    <div class="footer-actions" style="margin-bottom:14px;">
+      <button class="btn-ghost" id="testConnBtn">Test Sheet connection</button>
+    </div>
     <div class="tabs">
       <button class="tab-btn active" data-tab="group1">Harichowk – Birauta</button>
       <button class="tab-btn" data-tab="group2">Prithvichowk – Argaun Chowk</button>
@@ -312,7 +205,7 @@
 
     <div class="tab-panel active" id="panel-group1">
       <div class="table-scroll">
-        <table>
+        <table id="group1Table">
           <thead>
             <tr><th style="width:36px;">No</th><th>Name</th><th>Landmark</th></tr>
           </thead>
@@ -320,11 +213,14 @@
         </table>
       </div>
       <div class="empty" id="group1Empty">No data yet for these landmarks.</div>
+      <div class="footer-actions">
+        <button class="btn-ghost" id="printGroup1Btn">Print this list</button>
+      </div>
     </div>
 
     <div class="tab-panel" id="panel-group2">
       <div class="table-scroll">
-        <table>
+        <table id="group2Table">
           <thead>
             <tr><th style="width:36px;">No</th><th>Name</th><th>Landmark</th></tr>
           </thead>
@@ -332,14 +228,17 @@
         </table>
       </div>
       <div class="empty" id="group2Empty">No data yet for these landmarks.</div>
+      <div class="footer-actions">
+        <button class="btn-ghost" id="printGroup2Btn">Print this list</button>
+      </div>
     </div>
   </div>
 
   <div class="card">
     <p class="section-title">All Student Data (Full List)</p>
-    <p class="section-note">All submissions, newest first.</p>
+    <p class="section-note">All submissions, newest first — pulled live from the Google Sheet.</p>
     <div class="table-scroll">
-      <table>
+      <table id="allTable">
         <thead>
           <tr><th>Name</th><th>Faculty</th><th>Program / Year</th><th>Phone</th><th>Location</th><th>Landmark</th></tr>
         </thead>
@@ -349,6 +248,7 @@
     <div class="empty" id="allEmpty">No data yet.</div>
     <div class="footer-actions">
       <button class="btn-ghost" id="refreshBtn">Refresh</button>
+      <button class="btn-ghost" id="printAllBtn">Print full list</button>
       <button class="btn-ghost" id="csvBtn">Download CSV</button>
     </div>
   </div>
@@ -356,40 +256,48 @@
 </div>
 
 <script>
-// ---------- Storage adapter ----------
-// Uses window.storage when available (Claude artifact preview).
-// Falls back to localStorage when this file is hosted elsewhere (e.g. GitHub Pages),
-// so the form never breaks just because window.storage doesn't exist there.
-const hasCloudStorage = (typeof window.storage !== 'undefined') && window.storage !== null;
+// ============================================================
+// GOOGLE SHEET CONFIG — paste your Apps Script Web App URL here
+// (See the setup instructions provided alongside this file.)
+// ============================================================
+const SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzlCpAQxmbRAe50ZG3dBxAZzQEkPDs8Rq-xwp3Axr_zw6I2oqtu66ihPG3SN60WWPsC/exec";
 
-async function storageSet(key, value){
-  if(hasCloudStorage){
-    return await window.storage.set(key, value, true);
-  }
-  localStorage.setItem(key, value);
-  return { key, value };
+const isConfigured = SHEET_WEBAPP_URL && !SHEET_WEBAPP_URL.startsWith("PASTE_");
+if(!isConfigured){
+  document.getElementById('configWarn').style.display = 'block';
 }
 
-async function storageGet(key){
-  if(hasCloudStorage){
-    return await window.storage.get(key, true);
-  }
-  const value = localStorage.getItem(key);
-  return value !== null ? { key, value } : null;
+async function saveToSheet(entry){
+  // Use no-cors so the request always fires reliably across browsers/devices
+  // (some mobile browsers fail the fetch if they can't validate CORS headers
+  // on the response, even though the write itself would have succeeded).
+  // We can't read the response in this mode, so we just confirm no network
+  // error was thrown, then re-load from the sheet afterwards to verify.
+  await fetch(SHEET_WEBAPP_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(entry)
+  });
+  return true;
 }
 
-async function storageListKeys(prefix){
-  if(hasCloudStorage){
-    const res = await window.storage.list(prefix, true);
-    return (res && res.keys) ? res.keys : [];
-  }
-  return Object.keys(localStorage).filter(k => k.startsWith(prefix));
+async function loadFromSheet(){
+  const res = await fetch(SHEET_WEBAPP_URL + '?action=list');
+  if(!res.ok) throw new Error('Sheet load failed');
+  const json = await res.json();
+  return (json.data || []).map(row => ({
+    name: row.name,
+    faculty: row.faculty,
+    program: row.program,
+    semester: row.semester,
+    year: row.year,
+    phone: row.phone,
+    location: row.location,
+    landmark: row.landmark,
+    ts: row.timestamp ? new Date(row.timestamp).getTime() : 0
+  }));
 }
-
-// Let the admin know how data is being stored on this deployment
-document.getElementById('storageNotice').textContent = hasCloudStorage
-  ? 'Note: Data submitted here is saved to a shared list visible to all users of this form (so an admin can see every response).'
-  : 'Note: This copy is running outside Claude, so responses are saved in this browser only (not shared across devices). For a shared admin view across all students, connect a backend such as Google Sheets or Firebase.';
 
 // ---------- State & elements ----------
 const okMsg = document.getElementById('okMsg');
@@ -406,7 +314,7 @@ function showMsg(el){
 }
 
 function landmarkNum(landmarkStr){
-  return parseInt(landmarkStr.split('.')[0], 10);
+  return parseInt(String(landmarkStr).split('.')[0], 10);
 }
 
 const facultySelect = document.getElementById('ffaculty');
@@ -510,24 +418,16 @@ function renderTables(entries){
 }
 
 async function loadAll(){
-  let keys = [];
+  if(!isConfigured) return;
+  const loadErrMsg = document.getElementById('loadErrMsg');
   try{
-    keys = await storageListKeys('student:');
+    const entries = await loadFromSheet();
+    renderTables(entries);
+    loadErrMsg.style.display = 'none';
   }catch(e){
-    keys = [];
+    console.error(e);
+    loadErrMsg.style.display = 'block';
   }
-
-  const entries = [];
-  for(const k of keys){
-    try{
-      const r = await storageGet(k);
-      if(r && r.value){
-        entries.push(JSON.parse(r.value));
-      }
-    }catch(e){ /* skip missing/broken */ }
-  }
-
-  renderTables(entries);
 }
 
 // ---------- Submit ----------
@@ -553,6 +453,10 @@ submitBtn.addEventListener('click', async ()=>{
     showMsg(errMsg);
     return;
   }
+  if(!isConfigured){
+    showMsg(saveErrMsg);
+    return;
+  }
 
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting...';
@@ -565,17 +469,13 @@ submitBtn.addEventListener('click', async ()=>{
     phone, location, landmark,
     ts: Date.now()
   };
-  const key = 'student:' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
 
-  // Show the new entry right away, don't wait on the round-trip to storage
+  // Show the new entry right away, don't wait on the round-trip to the sheet
   const optimisticEntries = [...(window._allEntries || []), entry];
   renderTables(optimisticEntries);
 
   try{
-    const result = await storageSet(key, JSON.stringify(entry));
-    if(!result){
-      throw new Error('save failed');
-    }
+    await saveToSheet(entry);
     document.getElementById('fname').value='';
     facultySelect.value='';
     programSelect.value='';
@@ -587,6 +487,7 @@ submitBtn.addEventListener('click', async ()=>{
     document.getElementById('flocation').value='';
     document.getElementById('flandmark').value='';
     showMsg(okMsg);
+    await new Promise(r => setTimeout(r, 800));
     await loadAll();
   }catch(e){
     showMsg(saveErrMsg);
@@ -598,6 +499,39 @@ submitBtn.addEventListener('click', async ()=>{
 });
 
 document.getElementById('refreshBtn').addEventListener('click', loadAll);
+
+document.getElementById('testConnBtn').addEventListener('click', ()=>{
+  if(!isConfigured){
+    alert('SHEET_WEBAPP_URL is not set yet in the code.');
+    return;
+  }
+  window.open(SHEET_WEBAPP_URL, '_blank');
+});
+
+// ---------- Print ----------
+function printSection(title, tableEl){
+  const w = window.open('', '_blank');
+  w.document.write(`<html><head><title>${title}</title><style>
+    body{font-family:Arial, sans-serif; padding:24px; color:#12241f;}
+    h2{margin-bottom:14px;}
+    table{width:100%; border-collapse:collapse;}
+    th,td{border:1px solid #999; padding:6px 8px; text-align:left; font-size:13px;}
+    th{background:#f0f0f0;}
+  </style></head><body><h2>${title}</h2>${tableEl.outerHTML}</body></html>`);
+  w.document.close();
+  w.focus();
+  setTimeout(()=>{ w.print(); }, 300);
+}
+
+document.getElementById('printGroup1Btn').addEventListener('click', ()=>{
+  printSection('Landmark List — Harichowk to Birauta', document.getElementById('group1Table'));
+});
+document.getElementById('printGroup2Btn').addEventListener('click', ()=>{
+  printSection('Landmark List — Prithvichowk to Argaun Chowk', document.getElementById('group2Table'));
+});
+document.getElementById('printAllBtn').addEventListener('click', ()=>{
+  printSection('Gandaki Polytechnic Institute — Full Student Data', document.getElementById('allTable'));
+});
 
 document.getElementById('csvBtn').addEventListener('click', ()=>{
   const entries = window._allEntries || [];
