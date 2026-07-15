@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -193,27 +193,65 @@
   <div class="band-inner">
     <div class="eyebrow">Gandaki Polytechnic Institute</div>
     <h1>Student Data Collection Form</h1>
-    <div class="sub">Naam, phone number ra najikai ko bus landmark bharera pathaunuhos.</div>
+    <div class="sub">Please fill in your name, faculty, phone number, and nearest bus landmark, then submit.</div>
   </div>
 </div>
 
 <div class="wrap">
 
   <div class="card">
-    <label for="fname">Student ko naam</label>
-    <input type="text" id="fname" placeholder="Jasto: Sita Gurung">
+    <label for="fname">Student's Name</label>
+    <input type="text" id="fname" placeholder="e.g. Sita Gurung">
 
-    <label for="fphone">Phone number</label>
+    <label for="ffaculty">Faculty</label>
+    <select id="ffaculty">
+      <option value="" disabled selected>-- Select faculty --</option>
+      <option value="Engineering">Engineering</option>
+      <option value="General Medicine">General Medicine</option>
+      <option value="Pharmacy">Pharmacy</option>
+    </select>
+
+    <div id="engineeringFields" style="display:none;">
+      <label for="fprogram">Program</label>
+      <select id="fprogram">
+        <option value="" disabled selected>-- Select program --</option>
+        <option value="Civil Engineering">Civil Engineering</option>
+        <option value="Automobile Engineering">Automobile Engineering</option>
+      </select>
+
+      <label for="fsemester">Semester</label>
+      <select id="fsemester">
+        <option value="" disabled selected>-- Select semester --</option>
+        <option value="1">Semester 1</option>
+        <option value="2">Semester 2</option>
+        <option value="3">Semester 3</option>
+        <option value="4">Semester 4</option>
+        <option value="5">Semester 5</option>
+        <option value="6">Semester 6</option>
+      </select>
+    </div>
+
+    <div id="yearFields" style="display:none;">
+      <label for="fyear">Year</label>
+      <select id="fyear">
+        <option value="" disabled selected>-- Select year --</option>
+        <option value="First Year">First Year</option>
+        <option value="Second Year">Second Year</option>
+        <option value="Third Year">Third Year</option>
+      </select>
+    </div>
+
+    <label for="fphone">Phone Number</label>
     <input type="tel" id="fphone" placeholder="98XXXXXXXX">
 
-    <label for="flocation">Thau / Location</label>
-    <input type="text" id="flocation" placeholder="Aafno ghar / basobas ko thau lekhnuhos">
-    <div class="hint">Yo box ma aaphai aafno thau ko naam type garnuhos.</div>
+    <label for="flocation">Location</label>
+    <input type="text" id="flocation" placeholder="Type your home / residence location">
+    <div class="hint">Type your own location in this box.</div>
 
-    <label for="flandmark">Najikai ko bus ko landmark</label>
+    <label for="flandmark">Nearest Bus Landmark</label>
     <select id="flandmark">
-      <option value="" disabled selected>-- Landmark select garnuhos --</option>
-      <optgroup label="Landmark (Prithvichowk bhanda maathi: 1–8)">
+      <option value="" disabled selected>-- Select a landmark --</option>
+      <optgroup label="Landmarks (before Prithvichowk: 1–8)">
         <option>1. Harichowk</option>
         <option>2. Bindabasini</option>
         <option>3. Parsyang</option>
@@ -223,7 +261,7 @@
         <option>7. Rastra Bank</option>
         <option>8. Birauta</option>
       </optgroup>
-      <optgroup label="Landmark (Prithvichowk ra pachadi: 9–16)">
+      <optgroup label="Landmarks (Prithvichowk onward: 9–16)">
         <option>9. Prithvichowk</option>
         <option>10. Buddha Chowk</option>
         <option>11. Amarsingh Chowk</option>
@@ -235,41 +273,41 @@
       </optgroup>
     </select>
 
-    <button class="btn" id="submitBtn">Data pathaunuhos</button>
-    <div class="msg ok" id="okMsg">Dherai dhanyabad! Tapaiko data safaltapurbak collect bhayo.</div>
-    <div class="msg err" id="errMsg">Kripaya sabai field bharnuhos.</div>
-    <div class="notice">Note: Yo form ma bhareko data sabai user haru le herna sakne shared list ma save huncha (admin le sabai response herna milne banaieko ho).</div>
+    <button class="btn" id="submitBtn">Submit Data</button>
+    <div class="msg ok" id="okMsg">Thank you! Your data was collected successfully.</div>
+    <div class="msg err" id="errMsg">Please fill in all fields.</div>
+    <div class="notice">Note: Data submitted here is saved to a shared list visible to all users of this form (so an admin can see every response).</div>
   </div>
 
   <div class="card">
-    <p class="section-title">Collect bhaeko data — Prithvichowk ra pachadi ko landmark xuttai list</p>
-    <p class="section-note">Yaha ti students ko naam matra dekhincha jasle landmark 9 (Prithvichowk) dekhi 16 (Argaun Chowk) samma ma kunai ek select gareka xan.</p>
+    <p class="section-title">Collected Data — Landmarks from Prithvichowk Onward</p>
+    <p class="section-note">This shows only the names of students who selected a landmark from 9 (Prithvichowk) through 16 (Argaun Chowk).</p>
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th style="width:36px;">No</th><th>Naam</th><th>Landmark</th></tr>
+          <tr><th style="width:36px;">No</th><th>Name</th><th>Landmark</th></tr>
         </thead>
         <tbody id="group2Body"></tbody>
       </table>
     </div>
-    <div class="empty" id="group2Empty">Ahile samma yesari landmark select gareko data xaina.</div>
+    <div class="empty" id="group2Empty">No data yet for these landmarks.</div>
   </div>
 
   <div class="card">
-    <p class="section-title">Sabai student data (poorna list)</p>
-    <p class="section-note">Sabai submission haru, naya sabaibhanda mathi.</p>
+    <p class="section-title">All Student Data (Full List)</p>
+    <p class="section-note">All submissions, newest first.</p>
     <div class="table-scroll">
       <table>
         <thead>
-          <tr><th>Naam</th><th>Phone</th><th>Thau</th><th>Landmark</th></tr>
+          <tr><th>Name</th><th>Faculty</th><th>Program / Year</th><th>Phone</th><th>Location</th><th>Landmark</th></tr>
         </thead>
         <tbody id="allBody"></tbody>
       </table>
     </div>
-    <div class="empty" id="allEmpty">Ahile samma kunai data xaina.</div>
+    <div class="empty" id="allEmpty">No data yet.</div>
     <div class="footer-actions">
-      <button class="btn-ghost" id="refreshBtn">Refresh garnuhos</button>
-      <button class="btn-ghost" id="csvBtn">CSV download</button>
+      <button class="btn-ghost" id="refreshBtn">Refresh</button>
+      <button class="btn-ghost" id="csvBtn">Download CSV</button>
     </div>
   </div>
 
@@ -292,6 +330,74 @@ function isGroup2(landmarkStr){
   return num >= 9;
 }
 
+const facultySelect = document.getElementById('ffaculty');
+const engineeringFields = document.getElementById('engineeringFields');
+const yearFields = document.getElementById('yearFields');
+const programSelect = document.getElementById('fprogram');
+const semesterSelect = document.getElementById('fsemester');
+const yearSelect = document.getElementById('fyear');
+
+facultySelect.addEventListener('change', ()=>{
+  const val = facultySelect.value;
+  if(val === 'Engineering'){
+    engineeringFields.style.display = 'block';
+    yearFields.style.display = 'none';
+    yearSelect.value = '';
+  } else if(val === 'General Medicine' || val === 'Pharmacy'){
+    yearFields.style.display = 'block';
+    engineeringFields.style.display = 'none';
+    programSelect.value = '';
+    semesterSelect.value = '';
+  } else {
+    engineeringFields.style.display = 'none';
+    yearFields.style.display = 'none';
+  }
+});
+
+function programYearLabel(e){
+  if(e.faculty === 'Engineering'){
+    return `${e.program || ''} - Semester ${e.semester || ''}`;
+  }
+  return e.year || '';
+}
+
+function renderTables(entries){
+  const sorted = [...entries].sort((a,b)=> (b.ts||0) - (a.ts||0));
+
+  const allBody = document.getElementById('allBody');
+  const allEmpty = document.getElementById('allEmpty');
+  const group2Body = document.getElementById('group2Body');
+  const group2Empty = document.getElementById('group2Empty');
+
+  allBody.innerHTML = '';
+  group2Body.innerHTML = '';
+
+  if(sorted.length === 0){
+    allEmpty.style.display='block';
+  } else {
+    allEmpty.style.display='none';
+    for(const e of sorted){
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${escapeHtml(e.name)}</td><td>${escapeHtml(e.faculty)}</td><td>${escapeHtml(programYearLabel(e))}</td><td>${escapeHtml(e.phone)}</td><td>${escapeHtml(e.location)}</td><td>${escapeHtml(e.landmark)}</td>`;
+      allBody.appendChild(tr);
+    }
+  }
+
+  const group2 = sorted.filter(e => isGroup2(e.landmark));
+  if(group2.length === 0){
+    group2Empty.style.display='block';
+  } else {
+    group2Empty.style.display='none';
+    group2.forEach((e, i)=>{
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${i+1}</td><td>${escapeHtml(e.name)}</td><td>${escapeHtml(e.landmark)}</td>`;
+      group2Body.appendChild(tr);
+    });
+  }
+
+  window._allEntries = sorted;
+}
+
 async function loadAll(){
   let keys = [];
   try{
@@ -311,40 +417,7 @@ async function loadAll(){
     }catch(e){ /* skip missing/broken */ }
   }
 
-  entries.sort((a,b)=> (b.ts||0) - (a.ts||0));
-
-  const allBody = document.getElementById('allBody');
-  const allEmpty = document.getElementById('allEmpty');
-  const group2Body = document.getElementById('group2Body');
-  const group2Empty = document.getElementById('group2Empty');
-
-  allBody.innerHTML = '';
-  group2Body.innerHTML = '';
-
-  if(entries.length === 0){
-    allEmpty.style.display='block';
-  } else {
-    allEmpty.style.display='none';
-    for(const e of entries){
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${escapeHtml(e.name)}</td><td>${escapeHtml(e.phone)}</td><td>${escapeHtml(e.location)}</td><td>${escapeHtml(e.landmark)}</td>`;
-      allBody.appendChild(tr);
-    }
-  }
-
-  const group2 = entries.filter(e => isGroup2(e.landmark));
-  if(group2.length === 0){
-    group2Empty.style.display='block';
-  } else {
-    group2Empty.style.display='none';
-    group2.forEach((e, i)=>{
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${i+1}</td><td>${escapeHtml(e.name)}</td><td>${escapeHtml(e.landmark)}</td>`;
-      group2Body.appendChild(tr);
-    });
-  }
-
-  window._allEntries = entries;
+  renderTables(entries);
 }
 
 function escapeHtml(str){
@@ -355,20 +428,43 @@ function escapeHtml(str){
 
 submitBtn.addEventListener('click', async ()=>{
   const name = document.getElementById('fname').value.trim();
+  const faculty = facultySelect.value;
+  const program = programSelect.value;
+  const semester = semesterSelect.value;
+  const year = yearSelect.value;
   const phone = document.getElementById('fphone').value.trim();
   const location = document.getElementById('flocation').value.trim();
   const landmark = document.getElementById('flandmark').value;
 
-  if(!name || !phone || !location || !landmark){
+  if(!name || !faculty || !phone || !location || !landmark){
+    showMsg(errMsg);
+    return;
+  }
+  if(faculty === 'Engineering' && (!program || !semester)){
+    showMsg(errMsg);
+    return;
+  }
+  if((faculty === 'General Medicine' || faculty === 'Pharmacy') && !year){
     showMsg(errMsg);
     return;
   }
 
   submitBtn.disabled = true;
-  submitBtn.textContent = 'Pathaudai...';
+  submitBtn.textContent = 'Submitting...';
 
-  const entry = { name, phone, location, landmark, ts: Date.now() };
+  const entry = {
+    name, faculty,
+    program: faculty === 'Engineering' ? program : '',
+    semester: faculty === 'Engineering' ? semester : '',
+    year: (faculty === 'General Medicine' || faculty === 'Pharmacy') ? year : '',
+    phone, location, landmark,
+    ts: Date.now()
+  };
   const key = 'student:' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+
+  // Show the new entry right away, don't wait on the round-trip to storage
+  const optimisticEntries = [...(window._allEntries || []), entry];
+  renderTables(optimisticEntries);
 
   try{
     const result = await window.storage.set(key, JSON.stringify(entry), true);
@@ -376,6 +472,12 @@ submitBtn.addEventListener('click', async ()=>{
       throw new Error('save failed');
     }
     document.getElementById('fname').value='';
+    facultySelect.value='';
+    programSelect.value='';
+    semesterSelect.value='';
+    yearSelect.value='';
+    engineeringFields.style.display='none';
+    yearFields.style.display='none';
     document.getElementById('fphone').value='';
     document.getElementById('flocation').value='';
     document.getElementById('flandmark').value='';
@@ -383,9 +485,10 @@ submitBtn.addEventListener('click', async ()=>{
     await loadAll();
   }catch(e){
     showMsg(errMsg);
+    await loadAll();
   }finally{
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Data pathaunuhos';
+    submitBtn.textContent = 'Submit Data';
   }
 });
 
@@ -393,9 +496,10 @@ document.getElementById('refreshBtn').addEventListener('click', loadAll);
 
 document.getElementById('csvBtn').addEventListener('click', ()=>{
   const entries = window._allEntries || [];
-  let csv = 'Naam,Phone,Thau,Landmark\n';
+  let csv = 'Name,Faculty,Program/Year,Phone,Location,Landmark\n';
   for(const e of entries){
-    csv += `"${(e.name||'').replace(/"/g,'""')}","${(e.phone||'').replace(/"/g,'""')}","${(e.location||'').replace(/"/g,'""')}","${(e.landmark||'').replace(/"/g,'""')}"\n`;
+    const progYear = e.faculty === 'Engineering' ? `${e.program||''} - Semester ${e.semester||''}` : (e.year||'');
+    csv += `"${(e.name||'').replace(/"/g,'""')}","${(e.faculty||'').replace(/"/g,'""')}","${progYear.replace(/"/g,'""')}","${(e.phone||'').replace(/"/g,'""')}","${(e.location||'').replace(/"/g,'""')}","${(e.landmark||'').replace(/"/g,'""')}"\n`;
   }
   const blob = new Blob([csv], {type:'text/csv'});
   const url = URL.createObjectURL(blob);
