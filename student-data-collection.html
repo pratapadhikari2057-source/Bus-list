@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gandaki Polytechnic Institute — Student Data Collection</title>
+<style>
+  :root{
+    --ink:#12241f;
+    --paper:#f6f4ee;
+    --deep:#173d34;
+    --moss:#2f6b53;
+    --brass:#b98a3c;
+    --line:#d9d2c2;
+    --white:#ffffff;
+    --danger:#a3402f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family: "Segoe UI", "Noto Sans Devanagari", Arial, sans-serif;
+    min-height:100vh;
+  }
+  .band{
+    background:var(--deep);
+    color:var(--paper);
+    padding:28px 20px 22px;
+    border-bottom:4px solid var(--brass);
+  }
+  .band-inner{
+    max-width:760px;
+    margin:0 auto;
+  }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--brass);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  h1{
+    margin:0;
+    font-size:24px;
+    font-weight:700;
+    line-height:1.3;
+  }
+  .sub{
+    margin-top:6px;
+    font-size:14px;
+    color:#cfe0d8;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:26px 20px 60px;
+  }
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:24px;
+    margin-bottom:22px;
+  }
+  label{
+    display:block;
+    font-size:13px;
+    font-weight:600;
+    color:var(--deep);
+    margin-bottom:6px;
+    margin-top:16px;
+  }
+  label:first-of-type{margin-top:0;}
+  input[type=text], input[type=tel], select{
+    width:100%;
+    padding:11px 12px;
+    border:1px solid var(--line);
+    border-radius:7px;
+    font-size:15px;
+    background:#fbfaf7;
+    color:var(--ink);
+  }
+  input:focus, select:focus{
+    outline:2px solid var(--moss);
+    outline-offset:1px;
+    background:var(--white);
+  }
+  optgroup{font-weight:700; color:var(--deep);}
+  .hint{
+    font-size:12px;
+    color:#6b6459;
+    margin-top:4px;
+  }
+  .btn{
+    margin-top:22px;
+    width:100%;
+    padding:13px;
+    background:var(--moss);
+    color:var(--white);
+    border:none;
+    border-radius:7px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    transition:background .15s;
+  }
+  .btn:hover{background:#255a45;}
+  .btn:disabled{background:#9fb5ac; cursor:not-allowed;}
+  .msg{
+    margin-top:12px;
+    font-size:13.5px;
+    padding:10px 12px;
+    border-radius:6px;
+    display:none;
+  }
+  .msg.ok{display:block; background:#e4f1e9; color:var(--deep); border:1px solid #bcd9c9;}
+  .msg.err{display:block; background:#fbe9e5; color:var(--danger); border:1px solid #eec3ba;}
+
+  .section-title{
+    font-size:15px;
+    font-weight:700;
+    color:var(--deep);
+    margin:0 0 4px;
+  }
+  .section-note{
+    font-size:12.5px;
+    color:#6b6459;
+    margin:0 0 14px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  th, td{
+    text-align:left;
+    padding:8px 8px;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  th{
+    color:var(--deep);
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+  .empty{
+    font-size:13px;
+    color:#8a8377;
+    padding:14px 0;
+    text-align:center;
+  }
+  .table-scroll{
+    max-height:340px;
+    overflow-y:auto;
+    border:1px solid var(--line);
+    border-radius:7px;
+  }
+  .table-scroll table{width:100%;}
+  .table-scroll thead th{
+    position:sticky; top:0; background:var(--white);
+  }
+  .footer-actions{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  .btn-ghost{
+    flex:1;
+    padding:9px;
+    background:var(--white);
+    color:var(--deep);
+    border:1px solid var(--moss);
+    border-radius:7px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .btn-ghost:hover{background:#eef4f0;}
+  .notice{
+    font-size:11.5px;
+    color:#8a8377;
+    margin-top:10px;
+    line-height:1.5;
+  }
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="band-inner">
+    <div class="eyebrow">Gandaki Polytechnic Institute</div>
+    <h1>Student Data Collection Form</h1>
+    <div class="sub">Naam, phone number ra najikai ko bus landmark bharera pathaunuhos.</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="card">
+    <label for="fname">Student ko naam</label>
+    <input type="text" id="fname" placeholder="Jasto: Sita Gurung">
+
+    <label for="fphone">Phone number</label>
+    <input type="tel" id="fphone" placeholder="98XXXXXXXX">
+
+    <label for="flocation">Thau / Location</label>
+    <input type="text" id="flocation" placeholder="Aafno ghar / basobas ko thau lekhnuhos">
+    <div class="hint">Yo box ma aaphai aafno thau ko naam type garnuhos.</div>
+
+    <label for="flandmark">Najikai ko bus ko landmark</label>
+    <select id="flandmark">
+      <option value="" disabled selected>-- Landmark select garnuhos --</option>
+      <optgroup label="Landmark (Prithvichowk bhanda maathi: 1–8)">
+        <option>1. Harichowk</option>
+        <option>2. Bindabasini</option>
+        <option>3. Parsyang</option>
+        <option>4. 0 KM</option>
+        <option>5. Srijana Chowk</option>
+        <option>6. Ratna Chowk</option>
+        <option>7. Rastra Bank</option>
+        <option>8. Birauta</option>
+      </optgroup>
+      <optgroup label="Landmark (Prithvichowk ra pachadi: 9–16)">
+        <option>9. Prithvichowk</option>
+        <option>10. Buddha Chowk</option>
+        <option>11. Amarsingh Chowk</option>
+        <option>12. Chauthe</option>
+        <option>13. Bijaypur</option>
+        <option>14. Budi Bazar</option>
+        <option>15. Kalika Chowk</option>
+        <option>16. Argaun Chowk</option>
+      </optgroup>
+    </select>
+
+    <button class="btn" id="submitBtn">Data pathaunuhos</button>
+    <div class="msg ok" id="okMsg">Dherai dhanyabad! Tapaiko data safaltapurbak collect bhayo.</div>
+    <div class="msg err" id="errMsg">Kripaya sabai field bharnuhos.</div>
+    <div class="notice">Note: Yo form ma bhareko data sabai user haru le herna sakne shared list ma save huncha (admin le sabai response herna milne banaieko ho).</div>
+  </div>
+
+  <div class="card">
+    <p class="section-title">Collect bhaeko data — Prithvichowk ra pachadi ko landmark xuttai list</p>
+    <p class="section-note">Yaha ti students ko naam matra dekhincha jasle landmark 9 (Prithvichowk) dekhi 16 (Argaun Chowk) samma ma kunai ek select gareka xan.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th style="width:36px;">No</th><th>Naam</th><th>Landmark</th></tr>
+        </thead>
+        <tbody id="group2Body"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="group2Empty">Ahile samma yesari landmark select gareko data xaina.</div>
+  </div>
+
+  <div class="card">
+    <p class="section-title">Sabai student data (poorna list)</p>
+    <p class="section-note">Sabai submission haru, naya sabaibhanda mathi.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Naam</th><th>Phone</th><th>Thau</th><th>Landmark</th></tr>
+        </thead>
+        <tbody id="allBody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="allEmpty">Ahile samma kunai data xaina.</div>
+    <div class="footer-actions">
+      <button class="btn-ghost" id="refreshBtn">Refresh garnuhos</button>
+      <button class="btn-ghost" id="csvBtn">CSV download</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const okMsg = document.getElementById('okMsg');
+const errMsg = document.getElementById('errMsg');
+const submitBtn = document.getElementById('submitBtn');
+
+function showMsg(el){
+  okMsg.style.display='none';
+  errMsg.style.display='none';
+  el.style.display='block';
+  setTimeout(()=>{ el.style.display='none'; }, 4000);
+}
+
+function isGroup2(landmarkStr){
+  const num = parseInt(landmarkStr.split('.')[0], 10);
+  return num >= 9;
+}
+
+async function loadAll(){
+  let keys = [];
+  try{
+    const res = await window.storage.list('student:', true);
+    keys = (res && res.keys) ? res.keys : [];
+  }catch(e){
+    keys = [];
+  }
+
+  const entries = [];
+  for(const k of keys){
+    try{
+      const r = await window.storage.get(k, true);
+      if(r && r.value){
+        entries.push(JSON.parse(r.value));
+      }
+    }catch(e){ /* skip missing/broken */ }
+  }
+
+  entries.sort((a,b)=> (b.ts||0) - (a.ts||0));
+
+  const allBody = document.getElementById('allBody');
+  const allEmpty = document.getElementById('allEmpty');
+  const group2Body = document.getElementById('group2Body');
+  const group2Empty = document.getElementById('group2Empty');
+
+  allBody.innerHTML = '';
+  group2Body.innerHTML = '';
+
+  if(entries.length === 0){
+    allEmpty.style.display='block';
+  } else {
+    allEmpty.style.display='none';
+    for(const e of entries){
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${escapeHtml(e.name)}</td><td>${escapeHtml(e.phone)}</td><td>${escapeHtml(e.location)}</td><td>${escapeHtml(e.landmark)}</td>`;
+      allBody.appendChild(tr);
+    }
+  }
+
+  const group2 = entries.filter(e => isGroup2(e.landmark));
+  if(group2.length === 0){
+    group2Empty.style.display='block';
+  } else {
+    group2Empty.style.display='none';
+    group2.forEach((e, i)=>{
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${i+1}</td><td>${escapeHtml(e.name)}</td><td>${escapeHtml(e.landmark)}</td>`;
+      group2Body.appendChild(tr);
+    });
+  }
+
+  window._allEntries = entries;
+}
+
+function escapeHtml(str){
+  return String(str||'').replace(/[&<>"']/g, m => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[m]));
+}
+
+submitBtn.addEventListener('click', async ()=>{
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const location = document.getElementById('flocation').value.trim();
+  const landmark = document.getElementById('flandmark').value;
+
+  if(!name || !phone || !location || !landmark){
+    showMsg(errMsg);
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Pathaudai...';
+
+  const entry = { name, phone, location, landmark, ts: Date.now() };
+  const key = 'student:' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+
+  try{
+    const result = await window.storage.set(key, JSON.stringify(entry), true);
+    if(!result){
+      throw new Error('save failed');
+    }
+    document.getElementById('fname').value='';
+    document.getElementById('fphone').value='';
+    document.getElementById('flocation').value='';
+    document.getElementById('flandmark').value='';
+    showMsg(okMsg);
+    await loadAll();
+  }catch(e){
+    showMsg(errMsg);
+  }finally{
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Data pathaunuhos';
+  }
+});
+
+document.getElementById('refreshBtn').addEventListener('click', loadAll);
+
+document.getElementById('csvBtn').addEventListener('click', ()=>{
+  const entries = window._allEntries || [];
+  let csv = 'Naam,Phone,Thau,Landmark\n';
+  for(const e of entries){
+    csv += `"${(e.name||'').replace(/"/g,'""')}","${(e.phone||'').replace(/"/g,'""')}","${(e.location||'').replace(/"/g,'""')}","${(e.landmark||'').replace(/"/g,'""')}"\n`;
+  }
+  const blob = new Blob([csv], {type:'text/csv'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'gandaki_polytechnic_student_data.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+loadAll();
+</script>
+
+</body>
+</html>
